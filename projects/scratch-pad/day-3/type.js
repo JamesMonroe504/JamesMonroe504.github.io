@@ -15,7 +15,9 @@
 function isArray(value) {
     // YOUR CODE BELOW HERE //
     
-    
+    if (Array.isArray(value)) {
+        return true;
+    } return false;
     
     
     // YOUR CODE ABOVE HERE //
@@ -32,7 +34,19 @@ function isArray(value) {
 function isObject(value) {
     // YOUR CODE BELOW HERE //
     
-    
+    // checking to see if the value entered is an object and only an object
+   if (value instanceof Date) {
+      return false;
+  } else if (value === null) {
+      return false;
+  } else if (Array.isArray(value)) {
+      return false;  
+  } if (typeof value === "object") {
+      return true;
+  } else {
+    return false;
+  }
+
     
     
     // YOUR CODE ABOVE HERE //
@@ -47,8 +61,18 @@ function isObject(value) {
 function isCollection(value) {
     // YOUR CODE BELOW HERE //
     
-    
-    
+if (value instanceof Date) {
+      return false;
+  } else if (value === null) {
+      return false;
+  } else if (Array.isArray(value)) {
+      return true;  
+  } if (typeof value === "object") {
+      return true;
+  } else {
+    return false;
+  }
+
     
     // YOUR CODE ABOVE HERE //
 }
@@ -75,7 +99,33 @@ function isCollection(value) {
 function typeOf(value) {
     // YOUR CODE BELOW HERE //
     
-    
+    if (Array.isArray(value)) {
+           return 'array';
+       }
+       if (value instanceof Date) {
+           return 'date';
+       }
+       if (typeof value === 'string') {
+           return 'string';
+       }
+       if (value === null) {
+           return 'null';
+       }
+       if (typeof value === 'object') {
+           return 'object';
+       }
+       if (typeof value === "undefined") {
+           return 'undefined';
+       }
+       if (typeof value === 'boolean') {
+           return 'boolean';
+       }
+       if (typeof value === 'function') {
+            return 'function';
+           
+       } if (typeof value === 'number') {
+           return 'number';
+       }
     
     
     // YOUR CODE ABOVE HERE //

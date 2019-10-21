@@ -23,16 +23,33 @@
  */
 function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
-    
+    var output = [];
+    // if my start is greater than my end
+    if  (start < end) {
+    // looping from my start to my end incrementing by one 
+    for (var i = start; i <= end; i++) {
+    // push i at each interval into my empty output array
+        output.push(i);
+       
+    }         return output;
+
+    } else
+    // my start is bigger than my end 
+        start > end; 
+    // i will start at the start and end at the end. subtracting increments by 1
+        for (var j = start; j >= end; j--){
+        output.push(j);
+          
+
+        }return output;  
+             
+        
     
     
     
     // YOUR CODE GOES ABOVE HERE //
-}
 
-
-
-
+} range(7, 9);
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 if((typeof process !== 'undefined') &&
