@@ -2,8 +2,10 @@
 // Function 1 - Object Values ////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+// should take an object values, and return them into an array
 function objectValues(object) {
-
+    
+return Object.values(object);
 } 
 
 //////////////////////////////////////////////////////////////////////
@@ -12,6 +14,7 @@ function objectValues(object) {
 
 function keysToString(object) {
 
+return Object.keys(object).join(" ");
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -19,7 +22,23 @@ function keysToString(object) {
 //////////////////////////////////////////////////////////////////////
 
 function valuesToString(object) {
-    
+    // arr = array to contain values form object using .values
+var arr = Object.values(object);
+// newarr = array to contain the values filtered from for loop
+var newarr = [];
+console.log(arr);
+//for loop goes through each index (i) of arr
+for (var i = 0; i <= arr.length-1; i++){
+    //if statment checks if the type of values at the (i) index is string type
+  if (typeof arr[i] === "string"){
+    console.log(arr[i]);
+    //pushes value at the (i) index to newarr
+    newarr.push(arr[i]);
+  }
+  // sets newarr variable to arr.join(" "); whichs concats the array as a string. If you left () blank, it will join with a , instead
+} newarr = newarr.join(" ");
+//returns newarr which is now a string
+return newarr;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -27,7 +46,11 @@ function valuesToString(object) {
 //////////////////////////////////////////////////////////////////////
 
 function arrayOrObject(collection) {
-    
+    if (Array.isArray(collection) === Array.isArray()) {
+        return 'object';
+    } else if (typeof collection === 'object') {
+        return 'array';
+    } else return;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -35,7 +58,7 @@ function arrayOrObject(collection) {
 //////////////////////////////////////////////////////////////////////
 
 function capitalizeWord(string) {
-    
+    return string[0].toUpperCase() + string.slice(1, string.length);
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -43,7 +66,13 @@ function capitalizeWord(string) {
 //////////////////////////////////////////////////////////////////////
 
 function capitalizeAllWords(string) {
+      var array1 = string.split(' ');
+  var newArray = [];
     
+  for(var i = 0; i < array1.length; i++){
+      newArray.push(array1[i].charAt(0).toUpperCase() + array1[i].slice(1));
+  }
+  return newArray.join(' ');
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -51,7 +80,8 @@ function capitalizeAllWords(string) {
 //////////////////////////////////////////////////////////////////////
 
 function welcomeMessage(object) {
-
+    
+return "Welcome " + object.name[0].toUpperCase() + object.name.slice(1, object.name.length) + "!"; 
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -60,6 +90,8 @@ function welcomeMessage(object) {
 
 function profileInfo(object) {
 
+
+return object.name[0].toUpperCase() + object.name.slice(1, object.name.length) + " is a " + object.species[0].toUpperCase() + object.species.slice(1, object.species.length); 
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -67,6 +99,8 @@ function profileInfo(object) {
 //////////////////////////////////////////////////////////////////////
 
 function maybeNoises(object) {
+
+    return "there are no noises";
 
 }
 
@@ -76,14 +110,23 @@ function maybeNoises(object) {
 
 function hasWord(string, word) {
 
+    
+    if (string.includes(word) === true) {
+        return true;
+    }
+     return false;
 }
+
+
 
 //////////////////////////////////////////////////////////////////////
 // Function 11 - Add Friend //////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function addFriend (name, object) {
-
+//  Should take a name and an object and add the name to the object's friends array then return the object"
+object.friends.push(name);
+return object;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -91,14 +134,20 @@ function addFriend (name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function isFriend(name, object) {
-
-}
+// Should take a name and an object and return true if <name> is a friend of <object> and false otherwise", 
+if (typeof(object.friends) !== 'undefined' &&  object.friends.includes(name)) {
+    return true;
+} return false;
+} 
 
 //////////////////////////////////////////////////////////////////////
 // Function 13 - Non-Friends /////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function nonFriends(name, array) {
+var listOfNonFriends = [];
+
+// Should take a name and a list of people, and return a list of all the names that <name> is not friends with", 
 
 }
 

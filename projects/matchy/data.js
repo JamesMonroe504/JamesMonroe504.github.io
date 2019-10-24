@@ -144,7 +144,23 @@ console.log(animals.length);
  * 
  * 
  */
+var friends = []; // I chose an array because it can store different datatypes and its easier to access
 
+function getRandom(animals) {
+
+var minNum = 0;
+var maxNum = animals.length - 1;
+var index = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
+
+ var randomAnimal = animals[index];
+ 
+  return randomAnimal;
+}
+
+friends.push(getRandom(animals).name);
+
+ // 8. [ ] add `friends` as a **property** named `friends` on one of the animals in `animals`//
+  animals[1].friends = friends;
 /**
  * Nice work! You're done Part 1. Pat yourself on the back and
  * move onto Part 2 in the file called "functions.js"
