@@ -99,7 +99,7 @@ function remove(animals, name) {
 function add(animals, animal) {
     for(var i = 0; i < animals.length; i++) {
     if (animal.name.length > 0 && animal.species.length > 0) {
-        animals.push(animal);
+        animals.push(animal[i]);
         
     }
     

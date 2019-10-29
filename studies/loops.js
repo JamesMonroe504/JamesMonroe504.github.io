@@ -2,8 +2,8 @@
  * For Loops, for-in loops, and while loops
  * 
  * Loops
- * Are built in constructs in, which allow us to execute a block of code multiple times, which we can pull data out one by one.
- * 
+ * Allow us to execute a block of code multiple times, which we can pull data out one by one.
+ * Then manipulate or use that data in differnt ways
  * 0. for loops (which are great for iterating over an array multi times)
  * 
  * Its three statements which go into a for loop
@@ -38,13 +38,13 @@ for (var j = names.length - 1; j > -1; j--) // j starts at the end of the names 
  * 
  * Example Include
  */
-var count = 1; // initialized count to be 1
-while(count < 10) // while (keyword) count is less than 10 
-   { //inside code block will log count to the console everytime while the count is less than 10
-    console.log(count);
-    count++;
+var age = 26; // initialized age
+while(age <= 30) // while (keyword) my age of 26 
+   { //inside code block will log This age of __ is coming next!
+   
+    console.log("This age of " + age + " is coming next!");
+    age++; // increments age by one
 }
-
 
 /* for in loop
  * 
@@ -59,11 +59,15 @@ while(count < 10) // while (keyword) count is less than 10
  * Examples Include
  */
 // initiales the student variable as an object
- var student = {nameFirst: "James", nameLast: "Monroe"  // puts a key of nameLast with a value of Monroe inside the student object
+ var me = {nameFirst: "James", 
+           nameLast: "Monroe",
+           age: 26,
+           favoriteColor: "Blue",
+           yankeesFan: true
                };
               
- for (var key in student) // starts a for loop, intitaliazes a key variable to equal the value of the keys in the student object
+ for (var key in me) // starts a for loop, intitaliazes a key variable to equal the value of the keys in the student object
  {
-     console.log(student[key]); // logs the value of the keys in the student variable
+     console.log(me[key]); // logs the value of the keys in the student variable
  }
  

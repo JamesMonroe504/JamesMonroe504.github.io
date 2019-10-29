@@ -1,5 +1,9 @@
 /* DataTypes
- * 
+ * There are many differnt datatypes. Simple or primitive, complex dataypes as well.
+ * Datatypes hold different types and sizes of data depending on thich type you use.
+ * There is always a datatypes that fits any information. 
+ * I have some examples of the different dataypes, listed below, that we have used so far.
+ *
  * 0. Number
  * A number is a simple datatype. A number which is self explanitory consists of all numbers including intergers nd negative numbers.
 
@@ -7,7 +11,7 @@
  */
 
 var numberOne = 14; // assigns 14 to numberOne variable
-var numberTwo = 20.14; // assigns 14 to numberTwo variable
+var numberTwo = 20.14; // assigns 20.14 to numberTwo variable
 
 console.log(numberOne); // prints 14 to the console
 console.log(numberTwo); // prints 20.14 to the console.
@@ -50,7 +54,7 @@ console.log(booleanTWo); // it will print false which is also a boolean
 var arrayOne = []; // this is an array literal which is just an empty array.
 
 arrayOne.push(fullNameAndAge); // this .push method will push my fullName from earlier into my empty array
-arrayOne.booleanOne; // this will add the value of true into my array
+arrayOne.unshift(booleanOne); // this will add the value of true to the front of my array
 arrayOne.push(numberOne); // pushes 14 to the end of the array
 
 console.log(arrayOne); // prints the entire aray with everything added.
@@ -111,7 +115,10 @@ undefined and null are equal in value but different in type
 Exampled Include
  */
 
-var person = {firstName:"James", lastName:"Monroe", age:27, eyeColor:"brown"};
+var person = {firstName:"James", 
+              lastName:"Monroe", 
+              age:27, 
+              eyeColor:"brown"};
 person = null;    // Now value is null, but type is still an object
 
 /* 8. Nan
@@ -156,6 +163,13 @@ NEGATIVE_INFINITY, divided by any positive value except POSITIVE_INFINITY, is NE
 NEGATIVE_INFINITY, divided by either NEGATIVE_INFINITY or POSITIVE_INFINITY, is NaN.
  * 
  */
+ 
+var myNum = 14 + Infinity; // 14 plus infinity
+console.log(myNum); // will log Infinity to the console.
+
+var minNum = 20 - Infinity; // 20 minus infinity
+ console.log(myNum); // will log -Infinity to the console.
+ 
 
 /* 10. Primitive, Simple, Complex Datatypes
 Primitive / Simple Data Types All types except objects define immutable values (values, which are incapable of being changed). 

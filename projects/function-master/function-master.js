@@ -99,9 +99,11 @@ return object.name[0].toUpperCase() + object.name.slice(1, object.name.length) +
 //////////////////////////////////////////////////////////////////////
 
 function maybeNoises(object) {
-
-    return "there are no noises";
-
+  if (!object.noises || object.noises == "") {
+      return "there are no noises";
+  } else {
+      return object.noises.join(" ");
+  }
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -145,20 +147,36 @@ if (typeof(object.friends) !== 'undefined' &&  object.friends.includes(name)) {
 //////////////////////////////////////////////////////////////////////
 
 function nonFriends(name, array) {
-var listOfNonFriends = [];
-
-// Should take a name and a list of people, and return a list of all the names that <name> is not friends with", 
-
-
-
+    let nameList = [];
+    let notFriends = [];
+    let currentPerson;
+    for (let i = 0; i < array.length; i++) {
+        if (name === array[i].name) {
+            currentPerson = array[i];
+        }
+        else {
+            nameList.push(array[i].name);
+        }
+    }
+    for (let j = 0; j < nameList.length; j++) {
+        if (currentPerson.friends.indexOf(nameList[j]) === -1) {
+            notFriends.push(nameList[j]);
+        }
+    }
+    return notFriends;
 }
+
+
+
+
 
 //////////////////////////////////////////////////////////////////////
 // Function 14 - Update Object ///////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function updateObject(object, key, value) {
-
+object[key] = value
+return object;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -166,17 +184,21 @@ function updateObject(object, key, value) {
 //////////////////////////////////////////////////////////////////////
 
 function removeProperties(object, array) {
-
+for (let key in object){
+ if (array.includes(key)){
+  //console.log(key)
+  //console.log(object[key])
+     delete object[key];
+ }
 }
-
+}
 //////////////////////////////////////////////////////////////////////
 // Function 16 - Dedup ///////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function dedup(array) {
-
+return Array.from(new Set(array));
 }
-
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
