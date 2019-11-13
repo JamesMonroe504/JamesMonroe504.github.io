@@ -211,3 +211,18 @@ console.log(a); // it will return 1
 var subtract = function sub(num1, num2) {
     return num1 - num2;
 }; // in this example I stored the function in my subtract variable. so everytime I call the variable it runs the function
+
+
+/*
+ * Copy By Reference
+ * Is like a variable that equals a another variable that has a value 
+ * It doesn't contain an actual value just a reference to that value
+ * Is used with the complex datatypes as well
+ *
+ * Examples include
+ */
+ 
+ let example1 = [27, "James"];
+ 
+ let example2 = example1; // here we used copy by refernce
+ console.log(example2); // prints [27, 'James'] to the console.

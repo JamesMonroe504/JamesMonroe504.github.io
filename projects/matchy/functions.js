@@ -56,9 +56,9 @@ function replace(animals, name, replacement) {
             return null;
 
 
-    
-    
 }
+
+
 //////////////////////////////////////////////////////////////////////
 // Step 3 - Remove ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
@@ -93,19 +93,20 @@ function remove(animals, name) {
    - Adds this new Object to the `animals` Array, **only** if all the other conditions pass.
    - Make sure it works. 
  * 
- */
+*/ 
 
 
-function add(animals, animal) {
-    for(var i = 0; i < animals.length; i++) {
-    if (animal.name.length > 0 && animal.species.length > 0) {
-        animals.push(animal[i]);
-        
+function add(animals, animal){
+    if(!(animal.name.length > 0 && animal.species.length > 0)) {return}
+    for(let i = 0; i < animals.length; i++){
+     if( animals[i].name === animal.name){
+         return;
+     }   
+animals.push(animal);
     }
-    
 }
 
-}
+
 /**
  * You did it! You're all done with Matchy!
  */
@@ -115,7 +116,7 @@ function add(animals, animal) {
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-var search, replace, remove, add;
+ var search, replace, remove, add;
 if((typeof process !== 'undefined') &&
    (typeof process.versions.node !== 'undefined')) {
     module.exports.search = search || null;

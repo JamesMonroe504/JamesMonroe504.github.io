@@ -185,15 +185,27 @@ _.indexOf = function(array, value) {
 *   _.contains([1,"two", 3.14], "two") -> true
 */
 
-_.contains = function(array, value) {
+_.contains = function(array, value){
+     for(var i = 0; i < array.length; i++) {
+        if(array[i] === value? true : false) {
+         return true;   
+        } 
+     }
+   return false;
+ //(array[i] === value) ? true : false ; return false;
+};
+
+/* _.contains = function(array, value) {
     
     // runs a for loop that checks the length of the array
     for (var i = 0; i <= array.length; i++) {
         
         // returns true or false depending on the value being check for
-    return (array[i] === value? array[i] === value: !value);
+    return (array[i] === value? true: false);
 }
-};
+}; _.contains([2, 3, 4], 3);
+*/
+
 
 /** _.each
 * Arguments:
@@ -298,10 +310,11 @@ _.filter = function(array, function1) {
 */
 
 _.reject = function(array, function1) {
-    var newArray = [];
-    for (var i = 0; i <array.length; i++) {
-        
-    }
+    
+    
+    return _.filter(array, function(element, i, array) {
+        return !function1(element, i, array);
+    });
     
 }
 
@@ -324,6 +337,19 @@ _.reject = function(array, function1) {
 }
 */
 
+_.partition = function(array, function1){
+    var newArray = [];
+    
+    // for(var i = 0; i < array.length; i++) {
+        
+         newArray.push(_.filter(array, function(element, i, array){
+             return function1(element, i, array);
+                    }));     
+        newArray.push(_.reject(array, function(element, i, array){
+             return function1(element, i, array);
+                    }));
+           return newArray;        
+};
 
 /** _.map
 * Arguments:
@@ -341,6 +367,15 @@ _.reject = function(array, function1) {
 *   _.map([1,2,3,4], function(e){return e * 2}) -> [2,4,6,8]
 */
 
+_.map = function(collection, function1) {
+    var newArray = [];
+
+    
+        _.each(collection, function(element, i, collection){
+            newArray.push(function1(element, i, collection));
+        });
+        return newArray;
+} 
 
 /** _.pluck
 * Arguments:
@@ -352,6 +387,13 @@ _.reject = function(array, function1) {
 * Examples:
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
 */
+
+_.pluck = function(array, prop) {
+    
+  return _.map(array, function(element, i, array) {
+         return element[prop];
+})    
+};
 
 
 /** _.every
@@ -375,6 +417,30 @@ _.reject = function(array, function1) {
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
 
+_.every = function(collection, function1) {
+ 
+ var flag = null;
+    if (!function1) {
+        _.each(collection, function(i) {
+            if (!i) {
+                flag = false;
+            }
+        });
+    }
+    else {
+        _.each(collection, function(element, i, collection) {
+            if(!function1(element, i, collection)) {
+                flag = false;
+            }
+        });
+    }
+    if (flag === null) {
+        return true;
+    }
+    else {
+        return false;
+    }
+};  
 
 /** _.some
 * Arguments:
@@ -397,6 +463,42 @@ _.reject = function(array, function1) {
 *   _.some([1,2,3], function(e){return e % 2 === 0}) -> true
 */
 
+_.some = function(collection, function1) {
+    var flag = null;
+    if (function1 === undefined) {
+        _.each(collection, function(i) {
+            if (i) {
+                flag = true;
+            }
+        });
+    } 
+    
+    else {
+        if (Array.isArray(collection)) {
+            if (_.reject(collection, function1).length === collection.length) {
+                return false;
+            } 
+            else {
+                return true;
+            }
+        } 
+        else {
+            for (var key in collection) {
+                if (collection[key]) {
+                    flag = true;
+                }
+            }
+        }   
+    }
+    
+    if (flag === true) {
+        return true;
+    }
+    else {
+        return false;
+    }    
+};
+
 
 /** _.reduce
 * Arguments:
@@ -417,6 +519,23 @@ _.reject = function(array, function1) {
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
 
+_.reduce = function(array, action, startValue, seed) {
+    // input: array, action, startValue
+    // output: depends on case
+    // edgeCase: create conditions based on startvalue
+    // Constraint:
+    var previousResult = startValue;
+    var i = 0;
+    if (startValue === undefined) {
+        previousResult = array[0];
+        i = 1;
+    }
+    for (; i < array.length; i++) {
+        previousResult = action(previousResult, array[i], i, array);
+    }
+    return previousResult;
+};
+
 
 /** _.extend
 * Arguments:
@@ -432,6 +551,17 @@ _.reject = function(array, function1) {
 *   _.extend(data, {b:"two"}); -> data now equals {a:"one",b:"two"}
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
+
+_.extend = function(copyTo) {
+    var copyFromObjects = Array.prototype.slice.call(arguments, 1);
+    for (var i = 0; i < copyFromObjects.length; i++) {
+        var copyFrom = copyFromObjects[i];
+        for (var key in copyFrom) {
+            copyTo[key] = copyFrom[key];
+        }
+    }
+    return copyTo;
+};
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////

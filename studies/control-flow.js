@@ -15,10 +15,13 @@ Use switch to specify many alternative blocks of code to be executed
 var age = 31;
  if (age < 21) { // if with parenthesis with the condition that has to be met. In this case it has to be between 0 -12
         console.log("Girl get out of here");
+        
     } else if (age >= 21 && age <= 27) { // else if meaning if this block of code will run if the first if statement if false.
         console.log("Still a lil young over there");
+      
     } else if (age > 27 && age >= 40) { // you can have as many else if statements as you want. We're looking for a true statement
         console.log("Oh yea we in a nice ballpark");
+      
     } else      // else statement is the default statement. Meaning if all other blocks of code are false this will automatically be true
         console.log("You know I love my Cougars ^_^");
         
@@ -66,3 +69,16 @@ function chainToSwitch(val) {
 
 // Change this value to test
 chainToSwitch(7);
+
+
+// 3. Regular if statements
+// if the first condition is met the the first block will run 
+// if not then the second bloc of ode will automatically run
+let favNum = 14;
+
+  if (favNum >= 14 && favNum <= 20) {
+    console.log(`This is between the range of my favorite numbers`);  
+  
+} else {
+    console.log(`This is not between the range of my favorite numbers`);
+}

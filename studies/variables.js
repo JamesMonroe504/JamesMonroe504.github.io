@@ -43,11 +43,11 @@ Let is also a variable that can be re assigned another value after declaration
 */
 
 // 1. declaring let.
-// let example;
-// console.log(example); // will print un defined becasue it was only declared and not initialized
+ let example;
+ console.log(example); // will print un defined becasue it was only declared and not initialized
 
 // 2. initializing let as well as reassigning the value of oit
-let example = 5;
+example = 5;
 example = 7;
 console.log(example) // will log 7 to the console.
 
@@ -72,8 +72,8 @@ let variables are not initialized until their definition is evaluated.
 Accessing the variable before the initialization results in a ReferenceError. 
 The variable is in a "temporal dead zone" from the start of the block until the initialization is processed.
 */
-
 function do_something() {
+
  // console.log(bar); // undefined
  // console.log(foo); // ReferenceError
   var bar = 1;
@@ -92,7 +92,7 @@ However the only const you can change is a CONSTANT OBJECT
 
 // 2.  blocked scoped const.
 
-// var x = 10;
+ x = 10;
 // Here x is 10
 {
   const x = 2;
@@ -102,7 +102,15 @@ However the only const you can change is a CONSTANT OBJECT
 // Here x is 10 becasue the variable is declared with var and is globally avialable.
 
 // 3. Hoisting 
-// constant variables are not hoisted to the top. They are pinned to their code block
+// constant and let variables are not hoisted to the top. They are pinned to their code block
+// var keyword variables are hoisted to the top and are only pinned to functions
+
+// console.log(abs); // Will throw a refernce error because abs is not hoisted and so it's as if it doesn't see it. The same for const
+let abs = 8;
+
+console.log(ab); // Will log throw undefined because the variable declaration gets hoisted but not the value
+var ab = 6;
+
 
 /* 4. Temporal Dead Zone 
 Unlike variables declared with var, which will start with the value undefined, 

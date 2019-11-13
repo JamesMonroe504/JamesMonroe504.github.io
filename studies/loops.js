@@ -5,12 +5,13 @@
  * Allow us to execute a block of code multiple times, which we can pull data out one by one.
  * Then manipulate or use that data in differnt ways
  * 0. for loops (which are great for iterating over an array multi times)
+ * For loops do not have to start at zer they can start wherever you woud like them to be. 
  * 
  * Its three statements which go into a for loop
  * 
- * var i = 0 which initializes the i to start at 0.
- * i is less than the length of the names of the array 
- * i== which tells it how much to increment do decrement by
+ * var i = 0 which initializes the i to start at 0. Which is the starting condition
+ * i is less than the length of the names of the array. Which is it's stopping condition
+ * i++ which tells it how much to increment do decrement by. This is the iterator
  * 
  * Examples Include
  */
@@ -68,6 +69,7 @@ while(age <= 30) // while (keyword) my age of 26
               
  for (var key in me) // starts a for loop, intitaliazes a key variable to equal the value of the keys in the student object
  {
-     console.log(me[key]); // logs the value of the keys in the student variable
+     console.log(me[key]); // logs the value of the keys in the student object
+     console.log(key); // logs all the keys of the student object
  }
  
