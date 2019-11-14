@@ -12,18 +12,18 @@ Use switch to specify many alternative blocks of code to be executed
  */
 // 1. If Else Statments
 
-var age = 31;
- if (age < 21) { // if with parenthesis with the condition that has to be met. In this case it has to be between 0 -12
-        console.log("Girl get out of here");
+var degrees = 31;
+ if (degrees >= 95) { // if with parenthesis with the condition that has to be met. In this case it has to be between greater than 95
+        console.log("We getting real hot!!");
         
-    } else if (age >= 21 && age <= 27) { // else if meaning if this block of code will run if the first if statement if false.
-        console.log("Still a lil young over there");
+    } else if (degrees >= 80  && degrees <= 94) { // else if meaning if this block of code will run if the first if statement if false.
+        console.log("A lil warm but I'm not mad");
       
-    } else if (age > 27 && age >= 40) { // you can have as many else if statements as you want. We're looking for a true statement
-        console.log("Oh yea we in a nice ballpark");
+    } else if (degrees > 65 && degrees <= 79 ) { // you can have as many else if statements as you want. We're looking for a true statement
+        console.log("This is like the perfect weather for me");
       
     } else      // else statement is the default statement. Meaning if all other blocks of code are false this will automatically be true
-        console.log("You know I love my Cougars ^_^");
+        console.log("This is way too cold for me!!!");
         
         
 /* 2. Switch Statements

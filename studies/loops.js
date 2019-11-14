@@ -10,6 +10,7 @@
  * Its three statements which go into a for loop
  * 
  * var i = 0 which initializes the i to start at 0. Which is the starting condition
+ * Loops do not always have to start at 0 they can start wherever you want including the end, or the middle.
  * i is less than the length of the names of the array. Which is it's stopping condition
  * i++ which tells it how much to increment do decrement by. This is the iterator
  * 
