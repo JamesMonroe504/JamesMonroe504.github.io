@@ -7,55 +7,64 @@
  * Function Declaration 
  * Function Call
  * 
- * 
- * A JavaScript function is defined with the function keyword, followed by a name of the function, 
- * parenthesis if it takes parameters () followed by curly braces {}.
+ * In order to create a function you have to write the javascript keyword Function then you have to name your function
+ * Sometimes functions take parameters and if they do then you have to place () with , seperating each parameter
+ * Then after the () you place {} which are the curly braces and inside of your {} is your code block
  * 
  * 
  * The parentheses may include parameter names separated by commas (parameter1, parameter2)
  * Parameters are placeholders for values until values or arguments gets passed through
  *
- * The code is placed in curly braces {} which is that block of code for the function
+ * Like I stated earlier inside of your {is your code block for your function} 
  * 
- * Function arguments are the values received by the function when it is invoked.
+ * Function arguments take the place of the parameters which are place holders of the argument.
+ * When we call our function we place values instead of the parameters name. Those values are arguments
 
  * 
  * Function Return
- * When JavaScript reaches a return statement, the function will stop executing.
- * Functions must have a return statement The return value is "returned" back to the "caller or used for another function thats outside of it.
+ * The return statement is the end of the code of the function. It will stop the function from running once it reaches this value.
+ * All functions require a return statement or your code or function will not probably work or run.
+ * The return statement or the value is give back to us when call that we can keep, store, or see, and also us it in another function.
  * 
  * Examples Include
  */
 
-function cougar(age) {
+function weather(degrees) {
     // the code block of my function body
-            if (age < 21) { 
-        return ("Girl get out of here"); // will return this statement if this code block is true
-    } else if (age >= 21 && age <= 27) { 
-        return ("Still a lil young over there"); // will return this statement if this code block is true
-    } else if (age >= 28 && age <= 40) { 
-        return ("Oh yea we in a nice ballpark"); // will return this statement if this code block is true
-    } else      
-        return ("You know I love my Cougars ^_^"); // if no other statements above are true then it will print this out by default
+ if (degrees >= 95) { // if with parenthesis with the condition that has to be met. In this case it has to be between greater than 95
+       return console.log("We getting real hot!!");
+        
+    } else if (degrees >= 80  && degrees <= 94) { // else if meaning if this block of code will run if the first if statement if false.
+       return console.log("A lil warm but I'm not mad");
+      
+    } else if (degrees > 65 && degrees <= 79 ) { // you can have as many else if statements as you want. We're looking for a true statement
+       return console.log("This is like the perfect weather for me");
+      
+    } else      // else statement is the default statement. Meaning if all other blocks of code are false this will automatically be true
+       return console.log("This is way too cold for me!!!");
 
-} cougar(41);
+} weather(41); // Will console log "This is way too cold for me!!!"
 // Putting a function into a variable is as simple as just writing the function equal inside the variable.
 
-var hello = function cougar(age) {
+var hello = function weather(degrees) {
     // the code block of my function body
-            if (age < 21) { 
-        return ("Girl get out of here"); // will return this statement if this code block is true
-    } else if (age >= 21 && age <= 27) { 
-        return ("Still a lil young over there"); // will return this statement if this code block is true
-    } else if (age >= 28 && age <= 40) { 
-        return ("Oh yea we in a nice ballpark"); // will return this statement if this code block is true
-    } else      
-        return ("You know I love my Cougars ^_^"); // if no other statements above are true then it will print this out by default
+           
+ if (degrees >= 95) { // if with parenthesis with the condition that has to be met. In this case it has to be between greater than 95
+        return console.log("We getting real hot!!");
+        
+    } else if (degrees >= 80  && degrees <= 94) { // else if meaning if this block of code will run if the first if statement if false.
+        return console.log("A lil warm but I'm not mad");
+      
+    } else if (degrees > 65 && degrees <= 79 ) { // you can have as many else if statements as you want. We're looking for a true statement
+        return console.log("This is like the perfect weather for me");
+      
+    } else      // else statement is the default statement. Meaning if all other blocks of code are false this will automatically be true
+        return console.log("This is way too cold for me!!!");
+        
+}; hello(77); // will console log "This is like the perfect weather for me"
 
-}
 
-
-// FUnctions inside of Functions
+// Functions inside of Functions
 /*
  * Closure gives you access to an outer function's scope from an inner function. 
  * Everytime a function is created a closure is created. 

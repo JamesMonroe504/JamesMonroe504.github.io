@@ -48,6 +48,11 @@ var v = 14 % 2; // assigns v 0 becauser using remainder assignment
  * Examples Include
  */ 
  
+ w === z; // would be false because 23 is not equal to 26
+ w !== x; // would be true becasue w = 23 and is not equal to x which is = to 24
+ w >= x; // would be false because w = 23 and x = 24 so 23 is not greater than or equal to x which is 24;
+ w <= y; // will be true because w = 23 y = 25 because 23 is less than or equal to y which is 25
+ 
  // == loosely equal to just value not datatype
  // === strictly equal to value and datatype
  // !== Not equal to value or datatype
