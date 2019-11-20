@@ -225,9 +225,9 @@ var subtract = function sub(num1, num2) {
  
  
 var changeObject = (object) => {
-  object.proppy = 2;
+  object.number = 14;
 };
 var obj = {};
 
 changeObject(obj);
-obj; // ? {proppy: 2} 
+obj; // {number: 14} 
