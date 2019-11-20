@@ -218,11 +218,16 @@ var subtract = function sub(num1, num2) {
  * Is like a variable that equals a another variable that has a value 
  * It doesn't contain an actual value just a reference to that value
  * Is used with the complex datatypes as well
+ * It allows you to change the value and the reference to that value
  *
  * Examples include
  */
  
- let example1 = [27, "James"];
  
- let example2 = example1; // here we used copy by refernce
- console.log(example2); // prints [27, 'James'] to the console.
+var changeObject = (object) => {
+  object.proppy = 2;
+};
+var obj = {};
+
+changeObject(obj);
+obj; // ? {proppy: 2} 

@@ -1,13 +1,13 @@
 /* Operators.
+ * With these operators you can change, manipulate, compare, and check data. Most of these are self explantory by name. 
+ * Operators can deal with math equations or even words and other complex dataypes.
 Assignment operators
 Arithmetic operators
 Comparison operators
 Logical operators
 Unary operators (!, typeOf, -)
 Ternary operator (a ? b : c)
- * 
- * 
- * 
+  * 
  */
 
 /* 0. Aritmetic Operators 
@@ -72,15 +72,26 @@ var v = 14 % 2; // assigns v 0 becauser using remainder assignment
  // && The and operator all statements include with this symbol must be true
  // || The or operator any of the statements can be true
  // ! Negates everything to the to make it not true.
+ var a = 1, b = 2, c = 3;
+ 
+ if (a === 1 && b === 2) { // using the && means both statements on each side of the && must be true
+  console.log(true);
+ };
+ 
+ if ( a !==  2 || c === 3) { // using || means either of the statement can be true or pass the test for the code block to run
+  console.log(true); // also using ! negates the action or makes it negative in a sense
+ };
  
  /**
   * Unary Operators
   * 
   * 
   */ 
- // typeOf returns the datatype of the value it's checking
+ // typeOf returns the datatype of the value it's checking so if its an array it will return "array"
  // instanceOf returns true if that object is the object
  
+ console.log(typeof {}); // will log "object'
+ console.log(typeof 14); // will log "number"
  
  /**
   *  Ternary Operators take in 3 operands
@@ -90,5 +101,9 @@ var v = 14 % 2; // assigns v 0 becauser using remainder assignment
   * This is typically used as a shortcut for the if statement.
   */ 
   
+  // A function that determines if you have a fee to pay to get a security license if yoou dont have one.
+function securityFee(licensed) {
+  return (licensed ? "No charge you have a license" : "$50.00");
+}
 
   
